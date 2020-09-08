@@ -1,4 +1,5 @@
 const path = require('path');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -7,7 +8,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Webpack Output',
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+  //   new BrowserSyncPlugin({
+  //     host: 'localhost',
+  //     port: 3000,
+  //     proxy: 'http://reactdev.loc'
+  //  })
   ],
   entry: './src/app.js',
   output: {
